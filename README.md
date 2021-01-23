@@ -12,3 +12,4 @@
 				dev: webpack-dev-server
 	5. move index.js to src folder
 	6. change the src script in index.html to ./dist/main.js for build and to main.js for dev
+	7. use the fetch API with the then catch syntax first and with async await after that
