@@ -17,3 +17,4 @@
 4. create a utils file with a getList function to test the bundle file
 5. change the default configuration of webpack
 6. allow bundle to bundle css or scss files
+7. manage cache busting with the html webpack plugin and the \[hash\] notation
