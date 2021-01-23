@@ -3,6 +3,7 @@ const status = process.env.npm_lifecycle_event;
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
 	entry: './src/index.js',
@@ -43,8 +44,9 @@ const config = {
 }
 
 if(status == 'build') {
-	config.plugins.push(new CleanWebpackPlugin());
+	config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: '[name].[hash].css'}));
 	config.mode = 'production';
+	config.module.rules[0].use[0] = MiniCssExtractPlugin.loader
 }
 
 module.exports = config;

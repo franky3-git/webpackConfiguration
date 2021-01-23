@@ -20,3 +20,4 @@
 7. manage cache busting with the html webpack plugin and the \[hash\] notation
 8. configure webpack for production and for development with npm_lifecycle_event
 9. add html-loader and file-loader to load images
+10. add mini-css-extract-plugin to extract css in a different file
