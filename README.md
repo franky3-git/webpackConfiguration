@@ -15,3 +15,5 @@
 	7. use the fetch API with the then catch syntax first and with async await after that
 3. fetch data from a externally api (reqres.in API)
 4. create a utils file with a getList function to test the bundle file
+5. change the default configuration of webpack
+6. allow bundle to bundle css or scss files

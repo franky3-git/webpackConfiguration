@@ -1,9 +1,10 @@
 import { getList } from './utils';
+import './style.scss';
 const log = console.log;
 
 //fetching data internally
 const url = '../API/api.json';
-const ApiUrl = 'https://reqres.in/api/users';
+const ApiUrl = 'https://reqres.in/api/sers';
 
 //then catch syntax
 /*fetch(url)
