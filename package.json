@@ -1,0 +1,12 @@
+{
+  "name": "webpackConfiguration",
+  "version": "1.0.0",
+  "description": "** Tasks **\r 1. initialize the project as a git repo\r 2. fetch data locally and log it in the console\r \t1. initialize a package.json file\r \t2. install webpack-dev-server to allow fetching data from an http server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "frank",
+  "license": "MIT"
+}
