@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
 	entry: './src/index.js',
@@ -14,6 +15,9 @@ const config = {
 	devServer: {
 		contentBase: path.resolve(__dirname, 'dist'),
 		port: 5000
+	},
+	optimization: {
+		
 	},
 	mode: 'development',
 	module: {
@@ -46,7 +50,8 @@ const config = {
 if(status == 'build') {
 	config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: '[name].[hash].css'}));
 	config.mode = 'production';
-	config.module.rules[0].use[0] = MiniCssExtractPlugin.loader
+	config.module.rules[0].use[0] = MiniCssExtractPlugin.loader;
+	config.optimization.minimizer = [new OptimizeCssAssetsPlugin()];
 }
 
 module.exports = config;

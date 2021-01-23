@@ -1,6 +1,6 @@
 # working with data and API
 
-** Tasks **
+__ Tasks __
 1. initialize the project as a git repo
 2. fetch data locally and log it in the console
 	1. create a .gitignore file
@@ -21,3 +21,4 @@
 8. configure webpack for production and for development with npm_lifecycle_event
 9. add html-loader and file-loader to load images
 10. add mini-css-extract-plugin to extract css in a different file
+11. minimize the css with optimize-css-assets-webpack-plugin
