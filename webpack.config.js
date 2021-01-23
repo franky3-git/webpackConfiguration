@@ -41,9 +41,9 @@ const config = {
 	]
 }
 
-/*if(status == 'build') {
-	config.plugins.push(new HtmlWebpackPlugin({template: './src/template.html'}));
+if(status == 'build') {
+	
 	config.mode = 'production'
-}*/
+}
 
 module.exports = config;

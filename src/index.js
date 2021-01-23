@@ -1,11 +1,9 @@
-import { getList } from './utils';
+import { getList, fetchingData, log } from './utils';
 import './style.scss';
-const log = console.log;
 
 //fetching data internally
 const url = './API/api.json';
 const ApiUrl = 'https://reqres.in/api/sers';
-const dataUrl = '../API/data.csv';
 
 //then catch syntax
 /*fetch(url)
@@ -40,25 +38,28 @@ async function chartAllOfIt() {
 
 chartAllOfIt();
 
-async function fetchingData() {
-	const response = await fetch(dataUrl)
-	const jsonResponse = await response.text();
-	
-	const dataToArray = jsonResponse.split('\n');
-	const years = [];
-	const temp = [];
-	for(var i = 0; i < dataToArray.length; i++) {
-		const splittinLines = dataToArray[i].split(',');
-		splittinLines.forEach((cur, ind) => {
-			if(ind == 0) {
-				years.push(cur);
-			} else if(ind == 1) {
-				temp.push(parseFloat(cur) + 14);
-			}
-		})
+if('geolocation' in navigator) {
+	let options = {
+		enableHighAccuracy: false,
+		timeout: 1000 * 5,
+		maximumAge: 1000 * 60 * 7
 	}
-	log(years)
-	return [years, temp];
+	
+	navigator.geolocation.getCurrentPosition(posSuccess, posFail, options);
+	
+} else {
+	log('geolocation is not working in this browser');
+}
+
+function posSuccess(position) {
+	log(`longitude: ${position.coords.longitude}`);
+	log(`latitude: ${position.coords.latitude}`);
+}
+
+function posFail(err) {
+	if(err) {
+		log('Some error happened when trying to take position');
+	}
 }
 
 

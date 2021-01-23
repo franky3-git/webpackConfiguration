@@ -18,3 +18,4 @@
 5. change the default configuration of webpack
 6. allow bundle to bundle css or scss files
 7. manage cache busting with the html webpack plugin and the \[hash\] notation
+8. configure webpack for production and for development with npm_lifecycle_event
