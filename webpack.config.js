@@ -2,6 +2,7 @@ const status = process.env.npm_lifecycle_event;
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = {
 	entry: './src/index.js',
@@ -20,20 +21,20 @@ const config = {
 				test: /\.s?[ca]ss$/,
 				use: ['style-loader', 'css-loader', 'sass-loader'] 
 			},
-			/*{
+			{
 				test: /\.(png|gif|jpe?g)$/,
 				use: {
 					loader: 'file-loader',
 					options: {
 						name: "[name].[hash].[ext]",
-						outputPath: "img"
+						publicPath: "./"
 					}
 				}
 			},
 			{
 				test: /\.html$/,
-				loader: 'html-loader'
-			}*/
+				use: ['html-loader']
+			}
 		]
 	},
 	plugins: [
@@ -42,8 +43,8 @@ const config = {
 }
 
 if(status == 'build') {
-	
-	config.mode = 'production'
+	config.plugins.push(new CleanWebpackPlugin());
+	config.mode = 'production';
 }
 
 module.exports = config;

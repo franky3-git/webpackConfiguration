@@ -27,16 +27,14 @@ async function chartAllOfIt() {
 			datasets: [{
 				label: 'my csv datas',
 				data: temperature,
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)'
-				],
+				backgroundColor: 'rgba(255, 99, 132, 0.2)',
 				borderWidth: 1
 			}]
 		}
 	}
 )}
 
-chartAllOfIt();
+//chartAllOfIt();
 
 if('geolocation' in navigator) {
 	let options = {
